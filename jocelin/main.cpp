@@ -67,13 +67,26 @@ void solve() {
 //    sort(cars.begin(), cars.end(), [](int c1, int c2) { return carsTotalTime[c1] < carsTotalTime[c2]; });
     for (int i = 0; i < I; ++i) {
         vector<int> streets = streetEnterIntersection[i];
-
+        sort(streets.begin(), streets.end(),
+             [](int s1, int s2) { return carInStreet[s1].size() > carInStreet[s2].size(); });
+        int lt = D;
+        for (int j = 0; j < streets.size(); ++j) {
+            //sheduled[streets[i]] =
+        }
     }
 }
 
-void output() {/*
-    FILE *fp = fopen(A_OUT, "w");
-    fprintf(fp, "%d\n", d);*/
+void output() {
+    string out_file = OUT_DIR + pb + ".txt";
+    FILE *fp = fopen(out_file.c_str(), "w");
+    fprintf(fp, "%d\n", I);
+    for (int i = 0; i < I; ++i) {
+        fprintf(fp, "%d\n%d\n", i);
+        vector<int> streets = streetEnterIntersection[i];
+        sort(streets.begin(), streets.end(),
+             [](int s1, int s2) { return carInStreet[s1].size() > carInStreet[s2].size(); });
+
+    }
 }
 
 int main() {
