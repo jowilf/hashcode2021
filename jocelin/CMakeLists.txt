@@ -3,4 +3,4 @@ project(jocelin)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(jocelin main.cpp)
+add_executable(jocelin main.cpp main.h)
